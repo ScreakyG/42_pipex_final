@@ -6,11 +6,18 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 06:11:52 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/04/13 16:17:40 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/05/27 22:21:27 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
+
+static void	exit_here_doc(int temp_stdin, char **line)
+{
+	close(temp_stdin);
+	free(*line);
+	*line = get_next_line(temp_stdin);
+}
 
 void	get_here_doc(char **argv, t_data *data)
 {
@@ -26,11 +33,14 @@ void	get_here_doc(char **argv, t_data *data)
 	{
 		ft_putstr_fd("heredoc > ", 1);
 		line = get_next_line(temp_stdin);
-		if (line == NULL)
+		if (!line)
 			break ;
 		if (ft_strlen(argv[2]) + 1 == ft_strlen(line) && \
 			!ft_strncmp(argv[2], line, ft_strlen(argv[2])))
-			close(temp_stdin);
+		{
+			exit_here_doc(temp_stdin, &line);
+			break ;
+		}
 		else
 			ft_putstr_fd(line, temp_fd);
 		free(line);

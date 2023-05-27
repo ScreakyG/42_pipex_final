@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:54:31 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/04/15 19:25:18 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/05/27 21:57:16 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char **argv, char **envp)
 	if (argc == 5)
 	{
 		if (!ft_strncmp("here_doc", argv[1], 9))
-			return (msg("You need to add LIMITER\n", "", "", 1));
+			return (msg("You need to add LIMITER", "", "", 1));
 	}
 	init_data(&data, argc, argv, envp);
 	make_pipes(&data);
