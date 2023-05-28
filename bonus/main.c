@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:54:31 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/05/27 21:57:16 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/05/28 22:29:13 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ static void	init_data(t_data *data, int argc, char **argv, char **envp)
 		exit_error(msg(ERR_PIPES, "", "", 1), data);
 	data->paths_envp = get_paths_envp(envp);
 	data->cmd_paths = ft_split(data->paths_envp, ':');
-	if (!data->cmd_paths)
-		exit_error(msg(ERR_PATHS, "", "", 1), data);
 	data->pid = malloc(data->nb_cmds * sizeof(int));
 	if (!data->pid)
 		exit_error(msg(ERR_PIDS, "", "", 1), data);

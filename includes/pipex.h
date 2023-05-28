@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:55:49 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/04/18 16:08:13 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/05/28 22:27:10 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 
 # define ERR_ARGS "Invalid number of arguments\n"
 # define ERR_PIPES "Error while creating pipes\n"
-# define ERR_PATHS "Error finding CMD's paths\n"
+# define ERR_PATHS "Error finding CMD's paths"
 # define ERR_PIDS "Error while creating PIDS\n"
 # define ERR_HEREDOC "Error with here_doc\n"
 # define ERR_CMD "Command not found : "

@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 23:07:43 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/04/14 11:44:27 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/05/28 22:17:48 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,12 @@ void	free_cmd_args(t_data *data)
 void	free_parent(t_data *data)
 {
 	close_fds(data);
-	free_cmd_paths(data);
-	free(data->pid);
-	free(data->p_fd);
+	if (data->cmd_paths)
+		free_cmd_paths(data);
+	if (data->pid)
+		free(data->pid);
+	if (data->p_fd)
+		free(data->p_fd);
 	if (data->is_heredoc)
 		unlink(".here_doc.tmp");
 }
