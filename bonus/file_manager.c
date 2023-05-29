@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 05:29:50 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/04/15 19:25:20 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/05/29 13:37:01 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	get_outfile(t_data *data, char **argv, int argc)
 	else
 		data->outfile = open(argv[argc - 1], O_CREAT | O_TRUNC | O_RDWR, 0644);
 	if (data->outfile < 0)
-		msg(strerror(errno), " : ", "", 1);
+		msg(strerror(errno), " : ", argv[argc - 1], 1);
 }

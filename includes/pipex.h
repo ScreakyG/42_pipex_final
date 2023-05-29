@@ -6,7 +6,7 @@
 /*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 23:55:49 by fgonzale          #+#    #+#             */
-/*   Updated: 2023/05/28 22:27:10 by fgonzale         ###   ########.fr       */
+/*   Updated: 2023/05/29 13:22:11 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <sys/types.h>
 # include <sys/wait.h>
 
-# define ERR_ARGS "Invalid number of arguments\n"
+# define ERR_ARGS "Invalid number of arguments"
 # define ERR_PIPES "Error while creating pipes\n"
 # define ERR_PATHS "Error finding CMD's paths"
 # define ERR_PIDS "Error while creating PIDS\n"
