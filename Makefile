@@ -8,7 +8,7 @@ HEADERS_FILES = pipex.h
 HEADERS = $(addprefix $(HEADERS_DIR), $(HEADERS_FILES))
 
 SRCS_BONUS = bonus/
-SRCS_FILES_B = child.c error.c file_manager.c free.c here_doc.c main.c utils.c
+SRCS_FILES_B = child_bonus.c error_bonus.c file_manager_bonus.c free_bonus.c here_doc_bonus.c main_bonus.c utils_bonus.c
 SRCS_B = $(addprefix $(SRCS_BONUS), $(SRCS_FILES_B))
 OBJS_B = ${SRCS_B:.c=.o}
 
